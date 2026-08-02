@@ -119,8 +119,10 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CALSSES":(
+    "DEFAULT_AUTHENTICATION_CLASSES":(
         "rest_framework_simplejwt.authentication.JWTAuthentication",
 
     ),
 }
+
+AUTH_USER_MODEL = "accounts.User"
