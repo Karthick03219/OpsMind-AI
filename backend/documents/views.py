@@ -8,6 +8,7 @@ from .serializers import DocumentSerializer
 from .models import DocumentChunk
 from .chunking import chunk_text
 from .services import extract_text_from_pdf
+from .embeddings import generate_embedding
 
 
 class DocumentUploadView(APIView):
@@ -39,13 +40,14 @@ class DocumentUploadView(APIView):
                 # Split extracted text into chunks
                 chunks = chunk_text(extracted_text)
 
-                # Save chunks in database
+                # Create chunks with embeddings
                 DocumentChunk.objects.bulk_create(
                     [
                         DocumentChunk(
                             document=document,
                             content=chunk,
-                            chunk_index=index
+                            chunk_index=index,
+                            embedding=generate_embedding(chunk)
                         )
                         for index, chunk in enumerate(chunks)
                     ]

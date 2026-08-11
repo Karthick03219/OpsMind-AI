@@ -43,6 +43,11 @@ class DocumentChunk(models.Model):
 
     content = models.TextField()
 
+    embedding = models.JSONField(
+        null=True,
+        blank=True
+    )
+
     chunk_index = models.PositiveIntegerField()
 
     created_at = models.DateTimeField(
