@@ -16,6 +16,11 @@ class Document(models.Model):
         upload_to="documents/"
     )
 
+    extracted_text = models.TextField(
+        blank=True,
+        default=""
+    )
+
     uploaded_at = models.DateTimeField(
         auto_now_add=True
     )
