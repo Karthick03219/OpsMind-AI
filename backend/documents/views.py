@@ -9,6 +9,7 @@ from .models import DocumentChunk
 from .chunking import chunk_text
 from .services import extract_text_from_pdf
 from .embeddings import generate_embedding
+from .search import search_documents
 
 
 class DocumentUploadView(APIView):
@@ -82,3 +83,46 @@ class DocumentUploadView(APIView):
             serializer.errors,
             status=status.HTTP_400_BAD_REQUEST
         )
+
+class DocumentSearchView(APIView):
+
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+
+        query = request.data.get("query", "").strip()
+
+        if not query:
+            return Response(
+                {
+                    "error": "Query is required"
+                },
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        results = search_documents(query)
+
+        data = []
+
+        for result in results:
+            chunk = result["chunk"]
+
+            data.append(
+                {
+                    "document_id": chunk.document.id,
+                    "document_title": chunk.document.title,
+                    "chunk_index": chunk.chunk_index,
+                    "content": chunk.content,
+                    "score": result["score"],
+                }
+            )
+
+        return Response(
+            {
+                "query": query,
+                "results": data
+            },
+            status=status.HTTP_200_OK
+        )
+
+    
