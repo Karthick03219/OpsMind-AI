@@ -35,6 +35,32 @@ The application is designed around a simple principle: **answers should be groun
 - Break down required skills, preferred skills, experience, projects, education, and certifications
 - Show matched and missing skills
 
+## 📸 Screenshots
+
+### Landing Page
+![OpsMind AI Landing Page](screenshots/Screenshot%202026-08-19%20224410.png)
+
+### Knowledge Base
+![OpsMind AI Knowledge Base](screenshots/Screenshot%202026-08-19%20225042.png)
+
+### Resume Manager
+![OpsMind AI Resume Manager](screenshots/Screenshot%202026-08-19%20225126.png)
+
+### Resume Q&A
+![OpsMind AI Resume Q&A](screenshots/Screenshot%202026-08-19%20225747.png)
+
+### Job Match
+![OpsMind AI Job Match](screenshots/Screenshot%202026-08-19%20225825.png)
+
+### Job Match Results
+![OpsMind AI Job Match Results](screenshots/Screenshot%202026-08-19%20225851.png)
+
+### Analytics
+![OpsMind AI Analytics](screenshots/Screenshot%202026-08-19%20230331.png)
+
+### Settings
+![OpsMind AI Settings](screenshots/Screenshot%202026-08-19%20230414.png)
+
 ## Architecture
 
 ```text
@@ -106,15 +132,18 @@ OpsMind-AI/
 │   ├── manage.py
 │   └── requirements.txt
 │
-└── frontend/
-    ├── src/
-    │   ├── App.jsx
-    │   ├── App.css
-    │   ├── index.css
-    │   └── responsive.css
-    ├── public/
-    ├── package.json
-    └── vite.config.js
+├── frontend/
+│   ├── src/
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   ├── index.css
+│   │   └── responsive.css
+│   ├── public/
+│   ├── package.json
+│   └── vite.config.js
+│
+├── screenshots/
+└── README.md
 ```
 
 ## Running the Project
