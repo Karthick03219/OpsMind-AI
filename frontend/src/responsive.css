@@ -1,0 +1,105 @@
+/* =========================================================
+   OpsMind AI — Responsive Layout
+   ========================================================= */
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 768px) {
+  header {
+    position: sticky;
+  }
+
+  main {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  /* Hero */
+
+  h1 {
+    max-width: 100%;
+  }
+
+  /* Search */
+
+  form {
+    max-width: 100%;
+  }
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 600px) {
+
+  /* Header */
+
+  header {
+    min-height: 64px !important;
+  }
+
+  header > div {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Main */
+
+  main {
+    padding:
+      36px 14px 55px !important;
+  }
+
+  /* Hero */
+
+  section {
+    max-width: 100%;
+  }
+
+  /* Prevent oversized headings */
+
+  h1 {
+    font-size: 32px !important;
+    letter-spacing: -0.8px !important;
+  }
+
+  h2 {
+    font-size: 19px !important;
+  }
+
+  /* Upload card */
+
+  /* Search area */
+
+  /* Search + Ask button stack */
+
+  input[type="text"] {
+    min-width: 0 !important;
+  }
+
+  /* Chat */
+
+  /* User messages */
+
+  /* AI responses */
+
+}
+
+
+/* ---------- Small phones ---------- */
+
+@media (max-width: 420px) {
+
+  main {
+    padding-left: 11px !important;
+    padding-right: 11px !important;
+  }
+
+  h1 {
+    font-size: 28px !important;
+  }
+
+  button {
+    font-size: 12px;
+  }
+}
